@@ -4,16 +4,18 @@ import {
     Route
 } from "react-router-dom";
 
-import { Catalog } from "./components/pages/Catalog";
-import { Cart } from "./components/pages/Cart";
+import { Home } from "./components/pages/Home/Home";
+import { Market } from "./components/pages/Market/Market";
+import { Team } from "./components/pages/Team/Team";
 
 
 export function AppRoutes(){
     return(
         <Router>
             <Routes>
-                <Route path="/catalog" element={<Catalog/>} />
-                <Route path="/cart" element={<Cart/>} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/team" element={<Team/>} />
+                <Route path="/market" element={<Market/>} />
                     
             </Routes>
         </Router>
