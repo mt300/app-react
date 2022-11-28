@@ -1,36 +1,60 @@
 import { MainNav } from "../../navbar/MainNav/MainNav";
 import Stack from 'react-bootstrap/Stack';
 import Carousel from 'react-bootstrap/Carousel';
+import { Player } from "../../player/Plyaer";
+import "./market.css";
 
-export function Market(){
+export function Market(){    
     return(
         <>
         <MainNav/>
         <h1>Market</h1>
         <Stack gap={3}>
-            <Carousel variant="dark">
-                <Carousel.Item>
+            <h2>Toplaner</h2>
 
-                    <div className="d-block w-100 border">Second item</div>
-                    <Carousel.Caption>
-                        <h1>Carousel Second item</h1>
-                    </Carousel.Caption>
+            <Carousel variant="dark" className="carousel-players" interval={null}>
+                <Carousel.Item>
+                    <Player/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    Player
+                    <Player />
                 </Carousel.Item>
             </Carousel>
-            <Carousel>
-                <div className="bg-light border">First item</div>
+            <h2>Jungler</h2>
+            <Carousel variant="dark" className="carousel-players" interval={null}>
+                <Carousel.Item>
+                    <Player/>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Player />
+                </Carousel.Item>
             </Carousel>
-            <Carousel>
-                <div className="bg-light border">Third item</div>
+            <h2>Midlaner</h2>
+            <Carousel variant="dark" className="carousel-players" interval={null}>
+                <Carousel.Item>
+                    <Player/>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Player />
+                </Carousel.Item>
             </Carousel>
-            <Carousel>
-                <div className="bg-light border">Forth item</div>
+            <h2>Adcarry</h2>
+            <Carousel variant="dark" className="carousel-players" interval={null}>
+                <Carousel.Item>
+                    <Player/>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Player />
+                </Carousel.Item>
             </Carousel>
-            <Carousel>
-                <div className="bg-light border">Fiveth item</div>
+            <h2>Support</h2>
+            <Carousel variant="dark" className="carousel-players" interval={null}>
+                <Carousel.Item>
+                    <Player/>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Player />
+                </Carousel.Item>
             </Carousel>
             
         </Stack>
