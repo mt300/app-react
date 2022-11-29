@@ -1,12 +1,12 @@
 import  ListGroup from "react-bootstrap/ListGroup";
 import  Badge  from "react-bootstrap/Badge";
-import { PlayerProps, Lane, Stats } from "../../Types";
+import { PlayerProps, Lane, Stats } from "../../../Types";
 import Card from "react-bootstrap/Card";
 import "./chart.css";
 import  Button  from "react-bootstrap/Button";
 
-export function Chart(props:PlayerProps) {
-    var stats:Stats = props.stats;
+export function Chart(props:{player:PlayerProps}) {
+    var stats:Stats = props.player.stats;
     return(
         <ListGroup horizontal >
         <ListGroup.Item className="border-0 bg-transparent ">

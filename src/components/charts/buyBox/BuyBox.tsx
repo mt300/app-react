@@ -3,7 +3,7 @@ import  Button  from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup"
 
 import "./buyBox.css";
-import { Stats } from "../../Types";
+import { Stats } from "../../../Types";
 
 export function BuyBox(props:{price:number}){
     return(

@@ -5,8 +5,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
 import { Player } from "../../player/Plyaer";
 import { Lane, PlayerProps } from "../../../Types";
-import {Chart } from "../../player/Chart";
-import { BuyBox } from "../../player/BuyBox";
+import {Chart } from "../../charts/playerChart/Chart";
+import { BuyBox } from "../../charts/buyBox/BuyBox";
+import { PlayerCarousel } from '../../charts/playerCarousel/PlayerCarousel';
 import "./market.css";
 
 
@@ -19,13 +20,22 @@ export function Market(){
     const [adc,setAdc] = useState(0);
     const [sup,setSup] = useState(0);
 
+    // const orgs:Org[] = [
+    //     {
+            
+    //     },
+    //     {
+    //         name: "Loud"
+    //     }
+    // ]
+
     const toplaners:PlayerProps[] = [
-        {id:0, name:"Wizer", lane:Lane.TOP, stats:{
+        {id:0, name:"Wizer", lane:Lane.TOP,  stats:{
             kda: 2.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 21.90
         }},
-        {id:1, name:"Robo",  lane:Lane.TOP, stats:{
+        {id:1, name:"Robo",  lane:Lane.TOP,  stats:{
             kda: 5.5, cs: 9.5, assists: 0.93, grank: 1,
             lrank: 1, lscore: 203, mscore: 185, rstat1: 18,
             rstat2: 12, rstat3: 86, price: 13.90
@@ -47,7 +57,7 @@ export function Market(){
             lrank: 6, lscore: 183, mscore: 175, rstat1: 8,
             rstat2: 12, rstat3: 89, price: 10.90
         }},
-        {id:2, name:"Ranger", lane:Lane.JG, stats:{
+        {id:2, name:"Ranger", lane:Lane.JG,  stats:{
             kda: 1.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 9.90
@@ -64,19 +74,19 @@ export function Market(){
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 23.90
         }},
-        {id:2, name:"Jean Mago", lane:Lane.MID, stats:{
+        {id:2, name:"Jean Mago", lane:Lane.MID,  stats:{
             kda: 2.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 32.90
         }}
     ]
     const adcarys:PlayerProps[] = [
-        {id:0, name:"Trigo", lane:Lane.ADC, stats:{
+        {id:0, name:"Trigo", lane:Lane.ADC,  stats:{
             kda: 2.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 13.90
         }},
-        {id:1, name:"BrTT",  lane:Lane.ADC, stats:{
+        {id:1, name:"BrTT",  lane:Lane.ADC,  stats:{
             kda: 2.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 24.90
@@ -93,12 +103,12 @@ export function Market(){
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 13.90
         }},
-        {id:1, name:"Woz",  lane:Lane.SUP, stats:{
+        {id:1, name:"Woz",  lane:Lane.SUP,  stats:{
             kda: 2.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 13.90
         }},
-        {id:2, name:"Ceos", lane:Lane.SUP, stats:{
+        {id:2, name:"Ceos", lane:Lane.SUP,  stats:{
             kda: 2.5, cs: 6.8, assists: 0.53, grank: 3,
             lrank: 1, lscore: 183, mscore: 175, rstat1: 18,
             rstat2: 12, rstat3: 89, price: 13.90
@@ -114,80 +124,44 @@ export function Market(){
         <Stack gap={3}>
             <h2>Toplaner</h2>
             <div className="players-div">
-            <Carousel onSelect={(key,event)=>{setTop(key)}} variant="dark" className="carousel-players" indicators={false} interval={null}>
-                {toplaners.map(item => {
-                    return(
-                        <Carousel.Item key={item.id}>
-                        <Player name={item.name} id={item.id} lane={item.lane} stats={item.stats} />
-                    </Carousel.Item>
-                    )
-                })}
-            </Carousel>
-            <Chart name={toplaners[top].name} id={toplaners[top].id} lane={toplaners[top].lane} stats={toplaners[top].stats}/>
+           
+            <PlayerCarousel players={toplaners} func={setTop} />
+            <Chart player={toplaners[top]}/>
             <BuyBox price={toplaners[top].stats.price} />
             </div>
             <hr />
+
             <h2>Jungler</h2>
             <div className="players-div">
 
-            <Carousel onSelect={(key,event)=>setJg(key)} variant="dark" className="carousel-players" indicators={false} interval={null}>
-                {junglers.map(item => {
-                    return(
-                        <Carousel.Item key={item.id}>
-                        <Player name={item.name} id={item.id} lane={item.lane} stats={item.stats} />
-                    </Carousel.Item>
-                    )
-                })}
-            </Carousel>
-            <Chart name={junglers[jg].name} id={junglers[jg].id} lane={junglers[jg].lane} stats={junglers[jg].stats} />
+            <PlayerCarousel players={junglers} func={setJg} />
+            <Chart player={junglers[jg]} />
             <BuyBox price={junglers[jg].stats.price}/>
             </div>
             <hr />
+
             <h2>Midlaner</h2>
             <div className="players-div">
 
-            <Carousel onSelect={(key,event)=>setMid(key)} variant="dark" className="carousel-players" indicators={false} interval={null}>
-                {midlaners.map(item => {
-                    return(
-                        <Carousel.Item key={item.id}>
-                        <Player name={item.name} id={item.id} lane={item.lane} stats={item.stats}/>
-                    </Carousel.Item>
-                    )
-                })}
-            </Carousel>
-            <Chart name={midlaners[mid].name} id={midlaners[mid].id} lane={midlaners[mid].lane} stats={midlaners[mid].stats} />
+            <PlayerCarousel players={midlaners} func={setMid} />
+            <Chart player={midlaners[mid]} />
             <BuyBox price={midlaners[mid].stats.price} />
             </div>
             <hr />
+
             <h2>Adcarry</h2>
             <div className="players-div">
 
-            <Carousel onSelect={(key,event)=>setAdc(key)} variant="dark" className="carousel-players" indicators={false} interval={null}>
-                {adcarys.map(item => {
-                    return(
-                        <Carousel.Item key={item.id}>
-                            <Player name={item.name} id={item.id} lane={item.lane} stats={item.stats}/>
-                        </Carousel.Item>
-                    )
-                })}
-            </Carousel>
-            <Chart name={adcarys[adc].name} id={adcarys[adc].id} lane={adcarys[adc].lane} stats={adcarys[adc].stats} />
+            <PlayerCarousel players={adcarys} func={setAdc} />
+            <Chart player={adcarys[adc]} />
             <BuyBox price={adcarys[adc].stats.price} />
             </div>
             <hr />
             <h2>Support</h2>
             <div className="players-div">
 
-            <Carousel  onSelect={(key,event)=>setSup(key)} variant="dark" className="carousel-players" indicators={false} interval={null}>
-                {suplaner.map(item => {
-                    return(
-                        <Carousel.Item key={item.id}>
-                        <Player name={item.name} id={item.id} lane={item.lane} stats={item.stats}/>
-                    </Carousel.Item>
-                    )
-                })}
-            </Carousel>
-            <Chart name={suplaner[sup].name} id={suplaner[sup].id} lane={suplaner[sup].lane} stats={suplaner[sup].stats} />            
+            <PlayerCarousel players={suplaner} func={setSup} />
+            <Chart player={suplaner[sup]} />            
             <BuyBox price={suplaner[sup].stats.price} />
             </div>
         </Stack>

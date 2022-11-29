@@ -19,10 +19,13 @@ export type Stats = {
     rstat3: number,
     price: number
 }
+export type Org = {
+    name: string
+}
 
 export type PlayerProps = {
     name: string,
     id: number,
     lane: Lane,
-    stats:Stats
+    stats:Stats,
 }
