@@ -1,0 +1,18 @@
+
+.price-text {
+    font-family: "monospace";
+    font-size: 2em;
+    border: 1px solid red;
+
+    /* justify-self: center;
+    align-self: center; */
+}
+
+.card-buy-box {
+    align-self: center;
+}
+
+.list-group-buy {
+    /* border: 1px solid red; */
+    /* width: 18rem; */
+}

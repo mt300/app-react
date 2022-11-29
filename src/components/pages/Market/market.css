@@ -1,5 +1,22 @@
 .carousel-players{
-    border: 1px solid red;
-    width: 18rem;
+    /* border: 1px solid blue; */
+    width: 12rem;
+    align-self: flex-start;
+}
+
+.image-players{
     align-self: center;
+    /* width: 200px; */
+}
+
+.players-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100; */
+    /* border: 2px solid red; */
+}
+#container {
+    /* border: 3px solid blue; */
 }

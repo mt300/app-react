@@ -2,6 +2,14 @@
     max-width: 200px;
 }
 .border{
-    border: 10px solid red;
+    border: 0px solid red;
+
+}
+
+.card-players{
+    object-fit: contain;
+    /* width: 100vw; */
+    max-height: 300px;
+    /* border: 1px solid red; */
 
 }
