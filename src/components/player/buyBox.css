@@ -11,7 +11,9 @@
 .card-buy-box {
     align-self: center;
 }
-
+h3 {
+    color: white;
+}
 .list-group-buy {
     /* border: 1px solid red; */
     /* width: 18rem; */

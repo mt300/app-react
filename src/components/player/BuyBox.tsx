@@ -1,15 +1,17 @@
 import Card from "react-bootstrap/Card";
 import  Button  from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup"
-import "./buyBox.css";
 
-export function BuyBox(){
+import "./buyBox.css";
+import { Stats } from "../../Types";
+
+export function BuyBox(props:{price:number}){
     return(
         <ListGroup className="list-group-buy " variant="flush" >
-        <ListGroup.Item className="border-1">
-                <h3>Price $129.90</h3>
+        <ListGroup.Item className="border-1 bg-transparent">
+                <h3>Price ${props.price}</h3>
         </ListGroup.Item>
-        <ListGroup.Item className="border-0 mx-auto">
+        <ListGroup.Item className="border-0 mx-auto bg-transparent">
             
                 <Button variant="success" size="lg" className="" >Buy</Button>
             

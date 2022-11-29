@@ -12,11 +12,30 @@
 .players-div{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 1%;
     align-items: center;
     /* width: 100; */
-    /* border: 2px solid red; */
+    border-radius: 30px ;
+    border: 1px solid #ebf2fa ;
+    background-image: linear-gradient(to right bottom,#460e2dd9,#df2c14,#460e2dd9);
 }
-#container {
-    /* border: 3px solid blue; */
+/* #container { */
+    /* border-radius: 30%; */
+    /* background-image: radial-gradient(red,blue); */
+    /* background-color: transparent; */
+/* } */
+
+#outside-container {
+    background-image: linear-gradient(to right bottom,#03045e,#df2c14,#03045e);
+}
+
+hr {
+    color: #ebf2fa
+}
+
+h1, h2 {
+    color: white;
+    margin: 1%;
+    padding: 1%;
 }

@@ -8,7 +8,7 @@ import pic from "../../assets/player-default.png";
 
 export function Player(props:PlayerProps){
     return(
-        <Card className="card-players">
+        <Card className="card-players bg-transparent text-light">
             <Card.Img className="player-image" variant="top" src={pic} />
             <Card.Title className="ms-2 me-auto">{props.name}</Card.Title>
             <Card.Subtitle className="ms-2 me-auto">{props.lane} / {props.id} </Card.Subtitle>
