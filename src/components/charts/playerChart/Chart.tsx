@@ -8,8 +8,8 @@ import  Button  from "react-bootstrap/Button";
 export function Chart(props:{player:PlayerProps}) {
     var stats:Stats = props.player.stats;
     return(
-        <ListGroup horizontal >
-        <ListGroup.Item className="border-0 bg-transparent ">
+        <ListGroup className="w-50" horizontal >
+        <ListGroup.Item className="w-75 border-0 bg-transparent ">
             <ListGroup className="list-group " variant="flush">
                 <ListGroup.Item className="d-flex justify-content-between align-items-start bg-transparent text-light">
                     Kda Ratio: {stats.kda}
@@ -29,7 +29,7 @@ export function Chart(props:{player:PlayerProps}) {
                 </ListGroup.Item>
             </ListGroup>
         </ListGroup.Item>
-        <ListGroup.Item className="border-0 bg-transparent ">
+        <ListGroup.Item className="w-75 border-0 bg-transparent ">
             <ListGroup variant="flush" className="list-group">
                 <ListGroup.Item className="d-flex justify-content-between align-items-start bg-transparent text-light">
                     Last Score: {stats.lscore}

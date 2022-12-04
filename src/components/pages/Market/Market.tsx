@@ -164,6 +164,7 @@ export function Market(){
             <Chart player={suplaner[sup]} />            
             <BuyBox price={suplaner[sup].stats.price} />
             </div>
+            <hr /><hr /><hr />
         </Stack>
         </Container>
         </div>
